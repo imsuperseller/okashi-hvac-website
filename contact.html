@@ -17,7 +17,7 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
                     <a href="/" class="hover:opacity-80 transition-opacity">
-                        <img src="/public/logo.png" alt="Okashi HVAC Services Logo" class="h-16 max-w-xs w-auto">
+                        <img src="/public/logo.png" alt="Okashi HVAC Services logo with blue fan and green leaf design" class="h-16 max-w-xs w-auto">
                     </a>
                 </div>
                 
@@ -76,7 +76,9 @@
                                 <label for="name" class="block text-sm font-medium text-neutral mb-2">Full Name *</label>
                                 <input type="text" id="name" name="name" required 
                                        class="w-full px-4 py-3 border border-neutral-light rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                                       placeholder="Your full name">
+                                       placeholder="Your full name"
+                                       aria-label="Full Name"
+                                       aria-describedby="name-error">
                                 <div id="name-error" class="text-red-500 text-sm mt-1 hidden"></div>
                             </div>
                             
@@ -84,7 +86,9 @@
                                 <label for="phone" class="block text-sm font-medium text-neutral mb-2">Phone Number *</label>
                                 <input type="tel" id="phone" name="phone" required 
                                        class="w-full px-4 py-3 border border-neutral-light rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                                       placeholder="(555) 123-4567">
+                                       placeholder="(555) 123-4567"
+                                       aria-label="Phone Number"
+                                       aria-describedby="phone-error">
                                 <div id="phone-error" class="text-red-500 text-sm mt-1 hidden"></div>
                             </div>
                         </div>
@@ -93,7 +97,9 @@
                             <label for="email" class="block text-sm font-medium text-neutral mb-2">Email Address *</label>
                             <input type="email" id="email" name="email" required 
                                    class="w-full px-4 py-3 border border-neutral-light rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                                   placeholder="your.email@example.com">
+                                   placeholder="your.email@example.com"
+                                   aria-label="Email Address"
+                                   aria-describedby="email-error">
                             <div id="email-error" class="text-red-500 text-sm mt-1 hidden"></div>
                         </div>
                         
@@ -145,6 +151,10 @@
                         </button>
                         
                         <div id="form-message" class="text-center p-4 rounded-lg hidden"></div>
+                        
+                        <p class="text-sm text-neutral-light text-center mt-4">
+                            🔒 Your information is secure and used only for service requests. We respect your privacy.
+                        </p>
                     </form>
                 </div>
                 
