@@ -1,6 +1,6 @@
 {
   "name": "okashi-hvac-website",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Professional HVAC services website for Raanan Okashi in DFW area",
   "main": "server.js",
   "scripts": {

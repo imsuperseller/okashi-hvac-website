@@ -6,10 +6,11 @@ A complete, mobile-friendly three-page website for Raanan Okashi's solo HVAC bus
 
 ### Design & Branding
 - **Custom Color Palette**: Professional blue (#0066CC), green (#28A745), orange (#FD7E14) theme
-- **Custom Logo**: Professional HVAC branding with local Texas flair
+- **Custom Logo**: Professional HVAC branding with local Texas flair (clickable navigation)
 - **Typography**: Roboto for headings, Open Sans for body text
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
 - **Local Branding**: DFW-specific content and Texas flair
+- **Enhanced UX**: Logo links to home, social media integration, smooth navigation
 
 ### Pages
 1. **Home Page** (`index.html`)
@@ -31,11 +32,13 @@ A complete, mobile-friendly three-page website for Raanan Okashi's solo HVAC bus
    - Emergency service CTA
 
 ### Technical Features
-- **MCP Servers**: Weather, reviews, and validation APIs
+- **MCP Servers**: Weather, reviews, and validation APIs with fallbacks
 - **Form Validation**: Client-side and server-side validation
 - **SEO Optimized**: Meta tags, schema markup, sitemap
 - **Performance**: Fast loading, optimized assets
 - **Accessibility**: ARIA labels, high contrast, semantic HTML
+- **Error Handling**: Robust fallbacks for missing API keys
+- **Production Ready**: Vercel deployment with authentication disabled
 
 ## 🚀 Quick Start
 
@@ -186,6 +189,14 @@ colors: {
 
 3. **Set environment variables in Vercel dashboard**
 
+4. **Disable Authentication** (Important!)
+   - Go to Vercel Dashboard → Project Settings
+   - Disable password protection/authentication
+   - Site will be publicly accessible
+
+### Live Site
+**Production URL**: https://okashi-hvac-website-niqz9sk5j-shais-projects-f9b9e359.vercel.app
+
 ### Other Platforms
 
 The site is compatible with:
@@ -292,6 +303,15 @@ For support or questions:
 - Website: https://okashi-hvac.com
 
 ## 🔄 Updates
+
+### Version 1.1.0 (Current)
+- ✅ Fixed logo navigation (now clickable)
+- ✅ Updated social media links with proper URLs
+- ✅ Disabled Google Analytics placeholder
+- ✅ Enhanced error handling and fallbacks
+- ✅ Fixed server crashes with robust error handling
+- ✅ Disabled Vercel authentication for public access
+- ✅ Improved UX with hover effects and smooth transitions
 
 ### Version 1.0.0
 - Initial release
