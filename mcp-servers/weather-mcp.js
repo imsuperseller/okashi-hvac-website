@@ -4,6 +4,12 @@
 const weatherMCP = {
     async getWeather(city = 'Dallas') {
         try {
+            // Check if API key exists
+            if (!process.env.OPENWEATHER_API_KEY) {
+                console.log('OpenWeather API key not found, using fallback data');
+                return this.getFallbackWeather(city);
+            }
+            
             // Use native fetch instead of node-fetch
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.OPENWEATHER_API_KEY}&units=imperial`);
             
@@ -27,16 +33,37 @@ const weatherMCP = {
             };
         } catch (error) {
             console.error('Weather API error:', error);
-            // Fallback data for DFW area
-            return {
-                temperature: 75,
-                condition: 'Clear',
-                description: 'Comfortable weather in DFW',
-                humidity: 60,
-                tip: 'Great weather for HVAC maintenance and energy-efficient upgrades!',
-                city: city
-            };
+            // Return fallback data for DFW area
+            return this.getFallbackWeather(city);
         }
+    },
+    
+    getFallbackWeather(city) {
+        // Generate realistic fallback weather data
+        const currentHour = new Date().getHours();
+        let temp, condition, tip;
+        
+        if (currentHour >= 6 && currentHour <= 18) {
+            // Daytime - typically warmer
+            temp = Math.floor(Math.random() * 20) + 75; // 75-95°F
+            condition = Math.random() > 0.7 ? 'Clouds' : 'Clear';
+        } else {
+            // Nighttime - typically cooler
+            temp = Math.floor(Math.random() * 15) + 60; // 60-75°F
+            condition = 'Clear';
+        }
+        
+        tip = this.generateEcoTip(temp, condition);
+        
+        return {
+            temperature: temp,
+            condition: condition,
+            description: condition === 'Clear' ? 'clear sky' : 'scattered clouds',
+            humidity: 60,
+            tip: tip,
+            city: city,
+            fallback: true
+        };
     },
     
     generateEcoTip(temp, condition) {

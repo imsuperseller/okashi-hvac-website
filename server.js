@@ -199,6 +199,7 @@ app.get('/api/health', (req, res) => {
 // Error handling middleware
 app.use((error, req, res, next) => {
     console.error('Unhandled error:', error);
+    console.error('Error stack:', error.stack);
     res.status(500).json({
         success: false,
         message: 'Internal server error. Please try again later.',
@@ -212,6 +213,16 @@ app.use((req, res) => {
         success: false,
         message: 'Route not found. Please check the URL and try again.'
     });
+});
+
+// Global error handler for uncaught exceptions
+process.on('uncaughtException', (error) => {
+    console.error('Uncaught Exception:', error);
+    console.error('Error stack:', error.stack);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
 
 // Workiz integration function

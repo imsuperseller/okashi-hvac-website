@@ -4,6 +4,12 @@
 const reviewsMCP = {
     async getReviews() {
         try {
+            // Check if API key exists
+            if (!process.env.YELP_API_KEY) {
+                console.log('Yelp API key not found, using fallback reviews');
+                return this.getFallbackReviews();
+            }
+            
             // Use native fetch instead of node-fetch
             const response = await fetch('https://api.yelp.com/v3/businesses/search?location=DFW&term=HVAC&limit=5', {
                 headers: {
