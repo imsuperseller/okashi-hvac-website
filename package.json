@@ -9,20 +9,25 @@
     "build:css": "tailwindcss -i ./src/input.css -o ./public/styles.css --watch",
     "build": "tailwindcss -i ./src/input.css -o ./public/styles.css --minify"
   },
-  "keywords": ["hvac", "dallas", "fort-worth", "ac-repair", "heating-cooling"],
+  "keywords": [
+    "hvac",
+    "dallas",
+    "fort-worth",
+    "ac-repair",
+    "heating-cooling"
+  ],
   "author": "Raanan Okashi",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
     "cors": "^2.8.5",
-    "node-fetch": "^3.3.2",
-    "nodemailer": "^6.9.7",
-    "dotenv": "^16.3.1"
+    "dotenv": "^17.2.0",
+    "express": "^4.18.2",
+    "nodemailer": "^7.0.5"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.16",
     "nodemon": "^3.0.2",
-    "tailwindcss": "^3.3.6",
     "postcss": "^8.4.32",
-    "autoprefixer": "^10.4.16"
+    "tailwindcss": "^3.3.6"
   }
-} 
+}
