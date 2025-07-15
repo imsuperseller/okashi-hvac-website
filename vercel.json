@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "okashi-hvac-website",
   "builds": [
     {
       "src": "server.js",
@@ -39,10 +38,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "server.js": {
-      "maxDuration": 30
-    }
   }
 } 
