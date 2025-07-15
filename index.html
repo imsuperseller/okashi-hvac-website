@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okashi HVAC Services | Expert AC Repair & Installation in DFW</title>
+    <meta name="description" content="Raanan's one-man expertise for AC repair in Dallas, Fort Worth, Plano, Arlington & Irving. Fast, reliable, eco-friendly HVAC services in the DFW metroplex.">
+    <meta name="keywords" content="HVAC repair Dallas, AC install Fort Worth, emergency AC repair Plano, HVAC maintenance Arlington, AC installation Irving">
+    
+    <!-- SEO Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Okashi HVAC Services",
+        "description": "Solo HVAC pro Raanan Okashi delivering top service in Texas",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "DFW Area",
+            "addressLocality": "Dallas, Fort Worth, Plano, Arlington, Irving"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 32.7767,
+            "longitude": -96.7970
+        },
+        "telephone": "+1-555-123-4567",
+        "url": "https://okashi-hvac.com",
+        "priceRange": "$$",
+        "openingHours": "Mo-Su 00:00-23:59"
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID'); // REPLACE_WITH_ACTUAL
+    </script>
+    
+    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="icon" type="image/png" href="/public/logo.png">
+</head>
+<body class="bg-neutral-light font-opensans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container-custom px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="/public/logo.png" alt="Okashi HVAC Services Logo" class="h-16 max-w-xs w-auto">
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-primary font-roboto font-medium hover:text-primary-dark transition-colors">Home</a>
+                    <a href="/services.html" class="text-neutral font-roboto font-medium hover:text-primary transition-colors">Services</a>
+                    <a href="/contact.html" class="text-neutral font-roboto font-medium hover:text-primary transition-colors">Contact</a>
+                    <a href="https://workiz.com/schedule?token=placeholder" class="btn-accent">Book Now</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-primary" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-4 pb-4" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="/" class="text-primary font-roboto font-medium">Home</a>
+                    <a href="/services.html" class="text-neutral font-roboto font-medium">Services</a>
+                    <a href="/contact.html" class="text-neutral font-roboto font-medium">Contact</a>
+                    <a href="https://workiz.com/schedule?token=placeholder" class="btn-accent text-center">Book Now</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white section-padding">
+        <div class="container-custom text-center">
+            <h1 class="text-4xl md:text-6xl font-roboto font-bold mb-6 text-shadow animate-fade-in">
+                Expert HVAC Services in DFW
+            </h1>
+            <h2 class="text-xl md:text-2xl font-roboto font-medium mb-8 text-shadow animate-slide-up">
+                Personalized Repair, Install, and Maintain
+            </h2>
+            <p class="text-lg md:text-xl mb-8 max-w-4xl mx-auto leading-relaxed">
+                Raanan's one-man team delivers fast AC repair in Dallas heatwaves, reliable installs in Fort Worth, and eco-friendly maintenance to keep your Irving home cool year-round.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://workiz.com/schedule?token=placeholder" class="btn-accent text-lg px-8 py-4">
+                    Book Now
+                </a>
+                <a href="/services.html" class="btn-secondary text-lg px-8 py-4">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Alert Section -->
+    <section class="bg-white section-padding">
+        <div class="container-custom">
+            <div id="weather-alert" class="card text-center animate-fade-in">
+                <div class="flex items-center justify-center space-x-4 mb-4">
+                    <div id="weather-icon" class="text-4xl">🌡️</div>
+                    <div>
+                        <h3 class="text-xl font-roboto font-bold text-primary">DFW Weather Update</h3>
+                        <p id="weather-text" class="text-neutral">Loading weather information...</p>
+                    </div>
+                </div>
+                <div id="weather-tip" class="text-secondary font-medium"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="bg-neutral-light section-padding">
+        <div class="container-custom">
+            <h2 class="text-3xl md:text-4xl font-roboto font-bold text-center text-primary mb-12">
+                Tackling Texas-sized HVAC Issues
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Repair -->
+                <div class="card hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-4xl mb-4">🔧</div>
+                    <h3 class="text-xl font-roboto font-bold text-primary mb-4">Emergency Repairs</h3>
+                    <p class="text-neutral mb-4">
+                        Specialized HVAC repair for DFW homes and businesses – Raanan's expert touch fixes AC breakdowns quickly and affordably.
+                    </p>
+                    <ul class="text-sm text-neutral space-y-2">
+                        <li class="flex items-center">
+                            <span class="text-secondary mr-2">✓</span>
+                            24/7 response in Dallas
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-secondary mr-2">✓</span>
+                            Warranty-backed fixes in Plano
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Installation -->
+                <div class="card hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="text-xl font-roboto font-bold text-primary mb-4">Custom Installations</h3>
+                    <p class="text-neutral mb-4">
+                        Custom AC and HVAC installations designed for Texas climates with one-man precision for Irving residences using energy-efficient tech.
+                    </p>
+                    <ul class="text-sm text-neutral space-y-2">
+                        <li class="flex items-center">
+                            <span class="text-secondary mr-2">✓</span>
+                            Energy-saving setups in Fort Worth
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-secondary mr-2">✓</span>
+                            Free DFW-area quotes
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Maintenance -->
+                <div class="card hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-4xl mb-4">🌿</div>
+                    <h3 class="text-xl font-roboto font-bold text-primary mb-4">Eco-Friendly Maintenance</h3>
+                    <p class="text-neutral mb-4">
+                        Proactive HVAC maintenance to avoid costly repairs with seasonal checks tailored to DFW's humid summers with green practices.
+                    </p>
+                    <ul class="text-sm text-neutral space-y-2">
+                        <li class="flex items-center">
+                            <span class="text-secondary mr-2">✓</span>
+                            Affordable plans in Arlington
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-secondary mr-2">✓</span>
+                            Extend system life in Dallas
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary section-padding">
+        <div class="container-custom text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-roboto font-bold mb-6">
+                Beat the Dallas Heat with Our Quick AC Fixes
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                One-man expertise: Raanan handles every job personally for top-quality results. Available 24/7 for emergency repairs across the DFW metroplex.
+            </p>
+            <a href="/contact.html" class="btn-accent text-lg px-8 py-4">
+                Get Your Free Quote Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-dark text-white section-padding">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="/public/logo.png" alt="Okashi HVAC Services Logo" class="h-20 max-w-sm w-auto">
+                    </div>
+                    <p class="text-neutral-light mb-4">
+                        Solo HVAC pro Raanan Okashi delivering top service in Texas. Serving Dallas, Fort Worth, Plano, Arlington, and Irving with 7+ years of experience.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-neutral-light hover:text-white transition-colors">Nextdoor</a>
+                        <a href="#" class="text-neutral-light hover:text-white transition-colors">Facebook</a>
+                        <a href="#" class="text-neutral-light hover:text-white transition-colors">Yelp</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-roboto font-bold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-neutral-light">
+                        <p>📞 (555) 123-4567</p>
+                        <p>📧 raanan@okashihvac.com</p>
+                        <p>📍 DFW Metroplex</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-roboto font-bold mb-4">Service Areas</h4>
+                    <div class="space-y-1 text-neutral-light">
+                        <p>Dallas</p>
+                        <p>Fort Worth</p>
+                        <p>Plano</p>
+                        <p>Arlington</p>
+                        <p>Irving</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-neutral mt-8 pt-8 text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2L12.5 7.5L18 8L14 12L15 17.5L10 14.5L5 17.5L6 12L2 8L7.5 7.5L10 2Z"/>
+                    </svg>
+                    <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2C5.5 2 2 5.5 2 10C2 14.5 5.5 18 10 18C14.5 18 18 14.5 18 10C18 5.5 14.5 2 10 2ZM10 16C6.7 16 4 13.3 4 10C4 6.7 6.7 4 10 4C13.3 4 16 6.7 16 10C16 13.3 13.3 16 10 16Z"/>
+                    </svg>
+                </div>
+                <p class="text-neutral-light">
+                    © 2025 Okashi HVAC Services. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/script.js"></script>
+</body>
+</html> 

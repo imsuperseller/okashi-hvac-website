@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://okashi-hvac.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all pages
+Allow: /index.html
+Allow: /services.html
+Allow: /contact.html
+
+# Allow API endpoints for dynamic content
+Allow: /api/weather
+Allow: /api/reviews
+Allow: /api/health
+
+# Allow static assets
+Allow: /public/
+Allow: /public/logo.svg
+Allow: /public/styles.css
+Allow: /public/script.js
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /node_modules/ 
